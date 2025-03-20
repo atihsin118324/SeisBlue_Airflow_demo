@@ -1,0 +1,48 @@
+global:
+  database: testdb
+
+process_inventory:
+  build_database: False
+  hyp_filepath: /tmp/dataset/STATION0.2020HP.HYP
+
+process_event:
+  build_database: False
+  tag: manual
+
+process_waveform:
+  train:
+    pick_filter: {'from_time': 2017-04-01T00:00:00, 'to_time': 2017-04-30T12:00:00}
+    trace_length: 33
+    instance_parameters:
+      phase: PSN
+      shape: triang
+      half_width: 20
+      tag: manual
+      output_filepath: /tmp/dataset/train.hdf5
+  test:
+    pick_filter: {'from_time': 2017-05-01T00:00:00, 'to_time': 2017-05-30T12:00:00}
+    trace_length: 33
+    instance_parameters:
+      phase: PSN
+      shape: triang
+      half_width: 20
+      tag: manual
+      output_filepath: /tmp/dataset/test.hdf5
+
+associate:
+  assoc_picks:
+    pick_filter: {'from_time': 2017-03-28T00:00:00, 'to_time': 2017-04-28T12:00:00, 'tag': mannual}
+  candidate_events:
+    pick_filter: {'from_time': 2017-03-28T00:00:00, 'to_time': 2017-04-28T12:00:00, 'tag': mannual}
+    associator_parameters:
+      max_s_p: 60
+      origin_time_delta: 3
+      nsta_declare: 3
+    plot: False
+
+process_magnitude:
+  event_filter: {'from_time':2017-03-28T00:00:00}
+
+
+
+

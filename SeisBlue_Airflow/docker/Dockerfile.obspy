@@ -1,0 +1,8 @@
+FROM python:3.10
+
+WORKDIR /usr/src/app
+
+# Python package install
+COPY docker/requirements_obspy.txt ./requirements.txt
+RUN pip install --upgrade pip; \
+    pip --no-cache-dir install -r ./requirements.txt;

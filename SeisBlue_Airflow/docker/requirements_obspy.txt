@@ -1,0 +1,15 @@
+SQLAlchemy
+apache-airflow
+apache-airflow-providers-mysql
+h5py
+lxml
+matplotlib
+numpy
+obspy
+pandas
+pymysql
+pyyaml
+scipy
+seaborn
+sqlalchemy-utils
+tqdm

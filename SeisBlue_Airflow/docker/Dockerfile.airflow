@@ -1,0 +1,5 @@
+FROM apache/airflow:2.6.3
+
+COPY docker/requirements_airflow.txt ./requirements.txt
+RUN pip install --upgrade pip; \
+    pip --no-cache-dir install -r ./requirements.txt;

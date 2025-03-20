@@ -1,0 +1,27 @@
+global:
+  database: testdb
+  train_filepath: /tmp/dataset/train.hdf5
+  test_filepath: /tmp/dataset/test.hdf5
+  model_filepath: /tmp/dataset/model.pt
+
+train:
+  loader_parameters:
+    train_ratio: 0.7
+    batch_size: 32
+  train_valid_parameters:
+    epochs: 5
+    learning_rate: 1e-4
+  plot: False
+
+test:
+  loader_parameters:
+    batch_size: 32
+  evaluate_parameters:
+    learning_rate: 1e-4
+  tag: predict
+  threshold_parameters:
+    threshold: 0.5
+    distance: 100
+    from_ms: 0
+    to_ms: -1
+  plot: False

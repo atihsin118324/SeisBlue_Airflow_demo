@@ -1,0 +1,7 @@
+{
+  "mnt_config_filepath": "/opt/airflow/dags/config/mnt_config.yaml",
+  "data_config_filepath": "/opt/airflow/dags/config/data_config.yaml",
+  "model_config_filepath": "/opt/airflow/dags/config/model_config.yaml",
+  "workspace": "/opt/airflow/",
+  "owner": "airflow"
+}
